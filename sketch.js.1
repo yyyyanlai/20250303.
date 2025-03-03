@@ -1,0 +1,23 @@
+let input;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  input = createInput();
+  input.position(20, 20);
+  textSize(32); // 設定文字大小
+  textFont("Arial"); // 設定字型
+}
+
+function draw() {
+  background("#ffe5ec");
+  let txt = input.value();
+  let txtWidth = textWidth(txt + " ");
+  let x = (width - txtWidth * Math.floor(width / txtWidth)) / 2;
+  let y = input.y + input.height + textAscent(); // 從文字框下方開始
+
+  for (let j = 0; j < Math.floor(height / textAscent()); j++) {
+    for (let i = 0; i < Math.floor(width / txtWidth); i++) {
+      text(txt, x + i * txtWidth, y + j * textAscent());
+    }
+  }
+}
