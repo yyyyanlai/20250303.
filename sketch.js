@@ -29,7 +29,7 @@ function setup() {
   dropdown.size(100, 30); // 放大下拉式選單
   //下拉式選單文字大小
   dropdown.style('font-size', '16px');
-  dropdown.option('教育科技學系');
+  dropdown.option('測驗題');
   dropdown.option('第三週作品');
   dropdown.option('第三週講義');
   dropdown.changed(handleDropdownChange);
@@ -69,8 +69,8 @@ function toggleBounce() {
 
 function handleDropdownChange() {
   let selected = dropdown.value();
-  if (selected === '教育科技學系') {
-    iframe.attribute('src', 'https://www.et.tku.edu.tw/');
+  if (selected === '測驗題') {
+    iframe.attribute('src', 'https://yyyyanlai.github.io/20250310/');
     iframe.show();
   } else if (selected === '第三週作品') {
     iframe.attribute('src', 'https://yyyyanlai.github.io/20250303/');
